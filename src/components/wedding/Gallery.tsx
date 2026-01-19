@@ -6,40 +6,40 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 
+import gallery1 from "@/assets/gallery-1.jpg";
+import gallery2 from "@/assets/gallery-2.jpg";
+import gallery3 from "@/assets/gallery-3.jpg";
+import gallery4 from "@/assets/gallery-4.jpg";
+import gallery5 from "@/assets/gallery-5.jpg";
+
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  // Placeholder images - these can be replaced with actual photos
   const images = [
     {
       id: 1,
-      placeholder: true,
-      alt: "Foto 1",
+      src: gallery1,
+      alt: "Paola e David - Montagne",
     },
     {
       id: 2,
-      placeholder: true,
-      alt: "Foto 2",
+      src: gallery2,
+      alt: "Paola e David - Mare",
     },
     {
       id: 3,
-      placeholder: true,
-      alt: "Foto 3",
+      src: gallery3,
+      alt: "Paola e David - Dolomiti",
     },
     {
       id: 4,
-      placeholder: true,
-      alt: "Foto 4",
+      src: gallery4,
+      alt: "Paola e David - Tramonto",
     },
     {
       id: 5,
-      placeholder: true,
-      alt: "Foto 5",
-    },
-    {
-      id: 6,
-      placeholder: true,
-      alt: "Foto 6",
+      src: gallery5,
+      alt: "Paola e David - Urbino",
     },
   ];
 
@@ -89,22 +89,13 @@ const Gallery = () => {
                 index === 0 ? "col-span-2 row-span-2" : ""
               }`}
             >
-              {image.placeholder ? (
-                <div className={`bg-peach-light flex items-center justify-center ${
+              <img
+                src={image.src}
+                alt={image.alt}
+                className={`w-full h-full object-cover ${
                   index === 0 ? "aspect-square" : "aspect-square"
-                }`}>
-                  <div className="text-center p-4">
-                    <Camera className="w-8 h-8 text-peach-dark mx-auto mb-2" />
-                    <p className="text-peach-dark text-sm">Foto in arrivo</p>
-                  </div>
-                </div>
-              ) : (
-                <img
-                  src={`/placeholder.svg`}
-                  alt={image.alt}
-                  className="w-full h-full object-cover aspect-square"
-                />
-              )}
+                }`}
+              />
               
               {/* Hover overlay */}
               <div className="absolute inset-0 bg-peach-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -121,15 +112,10 @@ const Gallery = () => {
           <DialogContent className="max-w-4xl bg-background/95 backdrop-blur-sm border-peach/20 p-0">
             <DialogTitle className="sr-only">Visualizza foto</DialogTitle>
             <div className="relative aspect-[4/3] flex items-center justify-center bg-muted rounded-lg m-4">
-              {selectedImage !== null && images[selectedImage].placeholder ? (
-                <div className="text-center p-8">
-                  <Camera className="w-16 h-16 text-peach-dark mx-auto mb-4" />
-                  <p className="text-peach-dark text-lg font-serif">Foto in arrivo</p>
-                </div>
-              ) : (
+              {selectedImage !== null && (
                 <img
-                  src="/placeholder.svg"
-                  alt={selectedImage !== null ? images[selectedImage].alt : ""}
+                  src={images[selectedImage].src}
+                  alt={images[selectedImage].alt}
                   className="max-w-full max-h-full object-contain"
                 />
               )}
