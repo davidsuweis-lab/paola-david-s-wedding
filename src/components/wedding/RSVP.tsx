@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Send, Check, Heart } from "lucide-react";
+import { Send, Check, Heart, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -22,6 +22,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
 const formSchema = z.object({
   name: z.string().min(2, "Il nome deve avere almeno 2 caratteri"),
@@ -34,8 +39,14 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
+// Zapier webhook URL - you can set this to your own webhook
+const ZAPIER_WEBHOOK_URL = "";
+
 const RSVP = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [webhookUrl, setWebhookUrl] = useState(ZAPIER_WEBHOOK_URL);
+  const [showSettings, setShowSettings] = useState(false);
   const { toast } = useToast();
 
   const form = useForm<FormData>({
@@ -50,17 +61,55 @@ const RSVP = () => {
     },
   });
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = async (data: FormData) => {
     console.log("RSVP submitted:", data);
     
-    // Here you would typically send this to a backend
-    // For now, we'll just show a success message
-    toast({
-      title: "Grazie per la conferma! 💕",
-      description: "Abbiamo ricevuto la tua risposta. Non vediamo l'ora di festeggiare con te!",
-    });
-    
-    setIsSubmitted(true);
+    if (!webhookUrl) {
+      toast({
+        title: "Configurazione mancante",
+        description: "Inserisci l'URL del webhook Zapier nelle impostazioni per salvare le risposte su Google Sheets.",
+        variant: "destructive",
+      });
+      setShowSettings(true);
+      return;
+    }
+
+    setIsLoading(true);
+
+    try {
+      await fetch(webhookUrl, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        mode: "no-cors",
+        body: JSON.stringify({
+          timestamp: new Date().toISOString(),
+          name: data.name,
+          email: data.email,
+          attendance: data.attendance === "yes" ? "Sì" : "No",
+          guests: data.guests,
+          dietary: data.dietary || "Nessuna",
+          message: data.message || "",
+        }),
+      });
+
+      toast({
+        title: "Grazie per la conferma! 💕",
+        description: "Abbiamo ricevuto la tua risposta. Non vediamo l'ora di festeggiare con te!",
+      });
+      
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Error sending RSVP:", error);
+      toast({
+        title: "Errore",
+        description: "Si è verificato un errore. Riprova più tardi.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   if (isSubmitted) {
@@ -108,6 +157,35 @@ const RSVP = () => {
         {/* Form */}
         <div className="max-w-xl mx-auto">
           <div className="bg-card p-8 md:p-10 rounded-2xl shadow-sm border border-peach/20">
+            {/* Admin Settings (collapsible) */}
+            <Collapsible open={showSettings} onOpenChange={setShowSettings} className="mb-6">
+              <CollapsibleTrigger asChild>
+                <Button 
+                  variant="ghost" 
+                  size="sm" 
+                  className="w-full justify-start text-muted-foreground hover:text-foreground"
+                >
+                  <Settings className="w-4 h-4 mr-2" />
+                  Impostazioni Admin
+                </Button>
+              </CollapsibleTrigger>
+              <CollapsibleContent className="mt-4 p-4 bg-muted/50 rounded-lg">
+                <label className="block text-sm font-medium text-foreground mb-2">
+                  Zapier Webhook URL
+                </label>
+                <Input
+                  type="url"
+                  placeholder="https://hooks.zapier.com/hooks/catch/..."
+                  value={webhookUrl}
+                  onChange={(e) => setWebhookUrl(e.target.value)}
+                  className="border-peach/30 focus:border-peach focus:ring-peach mb-2"
+                />
+                <p className="text-xs text-muted-foreground">
+                  Crea un Zap con trigger "Webhooks by Zapier" → azione "Google Sheets - Create Spreadsheet Row"
+                </p>
+              </CollapsibleContent>
+            </Collapsible>
+
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                 {/* Name */}
@@ -239,10 +317,17 @@ const RSVP = () => {
                 {/* Submit Button */}
                 <Button
                   type="submit"
+                  disabled={isLoading}
                   className="w-full bg-peach hover:bg-peach-dark text-primary-foreground py-6 text-lg rounded-full transition-all duration-300"
                 >
-                  <Send className="w-5 h-5 mr-2" />
-                  Invia Conferma
+                  {isLoading ? (
+                    <>Invio in corso...</>
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5 mr-2" />
+                      Invia Conferma
+                    </>
+                  )}
                 </Button>
               </form>
             </Form>
