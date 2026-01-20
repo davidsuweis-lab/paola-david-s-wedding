@@ -3,29 +3,44 @@ import { Heart } from "lucide-react";
 const OurStory = () => {
   const milestones = [
     {
-      year: "2022",
+      year: "Giugno 2022",
       title: "Il Primo Appuntamento",
-      description: "Il destino ci ha fatto incontrare e tutto è cambiato.",
+      description: "Un invito a messa al Santo andato male (abbiamo sbagliato orario!) si è trasformato in uno Spritz all'ombra dei portici della Pasticceria Lilium, affianco alla Basilica del Santo.",
     },
     {
-      year: "2021",
-      title: "Il Primo Appuntamento",
-      description: "Una cena, mille risate e la certezza di aver trovato qualcosa di speciale.",
+      year: "Settembre 2022",
+      title: "Il Primo Bacio",
+      description: "Dopo un romantico giro sui Colli Euganei, il nostro primo bacio ha sigillato qualcosa di speciale.",
     },
     {
-      year: "2023",
-      title: "Andare a Vivere Insieme",
-      description: "Abbiamo deciso di costruire la nostra casa, il nostro nido.",
+      year: "Ottobre 2022",
+      title: "L'Ufficialità",
+      description: "Ci siamo messi insieme, nello stesso tavolino del nostro primo incontro, sempre alla Pasticceria Lilium vista Santo.",
     },
     {
-      year: "2025",
+      year: "Marzo 2023",
+      title: "La Prima Prova",
+      description: "5 mesi di distanza tra Madrid e Padova per la tesi di David. L'amore ha superato i chilometri.",
+    },
+    {
+      year: "Estate 2023",
+      title: "La Giordania",
+      description: "La prima volta di Paola in Giordania insieme a David, per conoscere le sue origini e la sua famiglia.",
+    },
+    {
+      year: "2024",
+      title: "Amicizie e Viaggi",
+      description: "Abbiamo consolidato molte amicizie insieme e viaggiato a Parigi ad aprile e a Barcellona a novembre.",
+    },
+    {
+      year: "20 Giugno 2025",
       title: "La Proposta",
-      description: "Un momento magico, un sì sussurrato tra lacrime di gioia.",
+      description: "Inaspettata, a Barcola a Trieste al tramonto, David chiede a Paola di sposarlo con un bellissimo anello.",
     },
     {
-      year: "2026",
+      year: "2 Maggio 2026",
       title: "Il Matrimonio",
-      description: "Il giorno in cui prometteremo di amarci per sempre.",
+      description: "Il giorno in cui prometteremo di amarci per sempre. Finalmente!",
     },
   ];
 
