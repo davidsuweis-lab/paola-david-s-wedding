@@ -19,6 +19,7 @@ const Navigation = () => {
     { href: "#storia", label: "La Nostra Storia" },
     { href: "#galleria", label: "Galleria" },
     { href: "#rsvp", label: "RSVP" },
+    { href: "#lista-nozze", label: "Lista Nozze" },
     { href: "#info", label: "Info" },
   ];
 
