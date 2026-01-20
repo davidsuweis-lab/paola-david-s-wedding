@@ -32,8 +32,8 @@ const Hero = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const scrollToRsvp = () => {
-    document.getElementById("rsvp")?.scrollIntoView({ behavior: "smooth" });
+  const openGoogleForm = () => {
+    window.open("https://forms.gle/vnXKaZvz41pxp86p9", "_blank");
   };
 
   return (
@@ -92,7 +92,7 @@ const Hero = () => {
 
         {/* CTA Button */}
         <button
-          onClick={scrollToRsvp}
+          onClick={openGoogleForm}
           className="inline-flex items-center gap-2 bg-peach hover:bg-peach-dark text-primary-foreground px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl animate-fade-in font-medium"
           style={{ animationDelay: "0.7s" }}
         >
