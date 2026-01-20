@@ -45,7 +45,7 @@ const Hero = () => {
         style={{ backgroundImage: `url(${heroBg})` }}
       />
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-background/60" />
+      <div className="absolute inset-0 bg-background/70" />
 
       <div className="container mx-auto px-4 text-center z-10">
         {/* Names */}
