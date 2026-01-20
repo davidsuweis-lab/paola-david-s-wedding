@@ -3,7 +3,7 @@ import { Heart } from "lucide-react";
 const OurStory = () => {
   const milestones = [
     {
-      year: "2020",
+      year: "2022",
       title: "Il Primo Incontro",
       description: "Il destino ci ha fatto incontrare e tutto è cambiato.",
     },
