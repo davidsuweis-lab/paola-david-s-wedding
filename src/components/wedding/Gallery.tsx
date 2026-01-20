@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronLeft, ChevronRight, Camera } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -156,12 +156,8 @@ const Gallery = () => {
                 className={`w-full h-full object-cover aspect-square ${image.position}`}
               />
               
-              {/* Hover overlay */}
-              <div className="absolute inset-0 bg-peach-dark/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                <div className="w-12 h-12 bg-background/90 rounded-full flex items-center justify-center">
-                  <Camera className="w-5 h-5 text-peach-dark" />
-                </div>
-              </div>
+              {/* Overlay - visible by default, hidden on hover */}
+              <div className="absolute inset-0 bg-peach-dark/30 opacity-100 group-hover:opacity-0 transition-opacity duration-300" />
             </div>
           ))}
         </div>
