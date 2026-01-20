@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Heart } from "lucide-react";
+import heroBg from "@/assets/hero-bg.jpg";
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -37,20 +38,18 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-peach-light via-background to-background">
-      {/* Decorative elements */}
-      <div className="absolute top-20 left-10 w-32 h-32 bg-peach/20 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-40 right-10 w-40 h-40 bg-peach/15 rounded-full blur-3xl animate-float" style={{ animationDelay: "1s" }} />
-      <div className="absolute top-1/3 right-1/4 w-24 h-24 bg-gold-light/20 rounded-full blur-2xl animate-float" style={{ animationDelay: "2s" }} />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background image */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      />
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-background/60" />
 
       <div className="container mx-auto px-4 text-center z-10">
-        {/* Small decorative text */}
-        <p className="text-muted-foreground tracking-[0.3em] uppercase text-sm mb-6 animate-fade-in">
-          Save the Date
-        </p>
-
         {/* Names */}
-        <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-light text-foreground mb-4 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+        <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-light text-foreground mb-4 animate-fade-in">
           Paola
         </h1>
         
@@ -60,17 +59,22 @@ const Hero = () => {
           <div className="h-px w-16 md:w-24 bg-peach-dark/40" />
         </div>
 
-        <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-light text-foreground mb-8 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+        <h1 className="font-serif text-6xl md:text-8xl lg:text-9xl font-light text-foreground mb-6 animate-fade-in" style={{ animationDelay: "0.4s" }}>
           David
         </h1>
 
+        {/* Subtitle */}
+        <p className="text-muted-foreground tracking-[0.2em] uppercase text-lg md:text-xl mb-4 animate-fade-in" style={{ animationDelay: "0.5s" }}>
+          Stiamo per sposarci
+        </p>
+
         {/* Date */}
-        <p className="font-serif text-2xl md:text-3xl text-peach-dark mb-12 animate-fade-in" style={{ animationDelay: "0.5s" }}>
+        <p className="font-serif text-2xl md:text-3xl text-peach-dark mb-12 animate-fade-in" style={{ animationDelay: "0.6s" }}>
           2 Maggio 2026
         </p>
 
         {/* Countdown */}
-        <div className="flex justify-center gap-4 md:gap-8 mb-12 animate-fade-in" style={{ animationDelay: "0.6s" }}>
+        <div className="flex justify-center gap-4 md:gap-8 mb-12 animate-fade-in" style={{ animationDelay: "0.7s" }}>
           {[
             { value: timeLeft.days, label: "Giorni" },
             { value: timeLeft.hours, label: "Ore" },
@@ -94,7 +98,7 @@ const Hero = () => {
         <button
           onClick={openGoogleForm}
           className="inline-flex items-center gap-2 bg-peach hover:bg-peach-dark text-primary-foreground px-8 py-3 rounded-full transition-all duration-300 shadow-lg hover:shadow-xl animate-fade-in font-medium"
-          style={{ animationDelay: "0.7s" }}
+          style={{ animationDelay: "0.8s" }}
         >
           Conferma la tua presenza
         </button>
