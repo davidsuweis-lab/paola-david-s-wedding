@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, ChevronLeft, ChevronRight, Camera } from "lucide-react";
+import { ChevronLeft, ChevronRight, Camera } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -11,6 +11,14 @@ import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/gallery-4.jpg";
 import gallery5 from "@/assets/gallery-5.jpg";
+import gallery6 from "@/assets/gallery-6.jpg";
+import gallery7 from "@/assets/gallery-7.jpg";
+import gallery8 from "@/assets/gallery-8.jpg";
+import gallery9 from "@/assets/gallery-9.jpg";
+import gallery10 from "@/assets/gallery-10.jpg";
+import gallery11 from "@/assets/gallery-11.jpg";
+import gallery12 from "@/assets/gallery-12.jpg";
+import gallery13 from "@/assets/gallery-13.jpg";
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
@@ -20,26 +28,79 @@ const Gallery = () => {
       id: 1,
       src: gallery1,
       alt: "Paola e David - Montagne",
+      position: "object-[50%_30%]",
     },
     {
       id: 2,
       src: gallery2,
       alt: "Paola e David - Mare",
+      position: "object-[50%_25%]",
     },
     {
       id: 3,
       src: gallery3,
       alt: "Paola e David - Dolomiti",
+      position: "object-[50%_35%]",
     },
     {
       id: 4,
       src: gallery4,
       alt: "Paola e David - Tramonto",
+      position: "object-[50%_30%]",
     },
     {
       id: 5,
       src: gallery5,
       alt: "Paola e David - Urbino",
+      position: "object-center",
+    },
+    {
+      id: 6,
+      src: gallery6,
+      alt: "Paola e David - Roma",
+      position: "object-[50%_25%]",
+    },
+    {
+      id: 7,
+      src: gallery7,
+      alt: "Paola e David - Porto",
+      position: "object-[50%_60%]",
+    },
+    {
+      id: 8,
+      src: gallery8,
+      alt: "Paola e David - Giordania cena",
+      position: "object-[50%_35%]",
+    },
+    {
+      id: 9,
+      src: gallery9,
+      alt: "Paola e David - Wadi Rum",
+      position: "object-[50%_40%]",
+    },
+    {
+      id: 10,
+      src: gallery10,
+      alt: "Paola e David - Parco Parigi",
+      position: "object-[50%_30%]",
+    },
+    {
+      id: 11,
+      src: gallery11,
+      alt: "Paola e David - Hotel de Ville Parigi",
+      position: "object-[50%_35%]",
+    },
+    {
+      id: 12,
+      src: gallery12,
+      alt: "Paola e David - Torre Eiffel",
+      position: "object-[50%_30%]",
+    },
+    {
+      id: 13,
+      src: gallery13,
+      alt: "Paola e David - Castello Miramare Trieste",
+      position: "object-[50%_25%]",
     },
   ];
 
@@ -80,7 +141,7 @@ const Gallery = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 max-w-6xl mx-auto">
           {images.map((image, index) => (
             <div
               key={image.id}
@@ -92,9 +153,7 @@ const Gallery = () => {
               <img
                 src={image.src}
                 alt={image.alt}
-                className={`w-full h-full object-cover ${
-                  index === 0 ? "aspect-square" : "aspect-square"
-                }`}
+                className={`w-full h-full object-cover aspect-square ${image.position}`}
               />
               
               {/* Hover overlay */}
