@@ -4,7 +4,7 @@ const OurStory = () => {
   const milestones = [
     {
       year: "2022",
-      title: "Il Primo Incontro",
+      title: "Il Primo Appuntamento",
       description: "Il destino ci ha fatto incontrare e tutto è cambiato.",
     },
     {
