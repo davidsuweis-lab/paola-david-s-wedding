@@ -4,23 +4,36 @@ import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 
 const GiftSection = () => {
-  const [copied, setCopied] = useState(false);
   const { toast } = useToast();
 
-  const ibanDetails = {
+  const ibanPaola = {
     intestatario: "Paola Ricardi Di Netro",
     banca: "Unicredit",
-    iban: "IT00 X000 0000 0000 0000 0000 000", // Placeholder - da sostituire con IBAN reale
+    iban: "IT75 A020 0802 2340 0010 6211 828",
   };
 
-  const copyIban = () => {
-    navigator.clipboard.writeText(ibanDetails.iban.replace(/\s/g, ""));
-    setCopied(true);
+  const ibanDavid = {
+    intestatario: "David Simon Suweis",
+    banca: "Intesa Sanpaolo",
+    iban: "IT32 D030 6912 1311 0000 0006 427",
+  };
+
+  const [copiedPaola, setCopiedPaola] = useState(false);
+  const [copiedDavid, setCopiedDavid] = useState(false);
+
+  const copyIban = (iban: string, type: 'paola' | 'david') => {
+    navigator.clipboard.writeText(iban.replace(/\s/g, ""));
+    if (type === 'paola') {
+      setCopiedPaola(true);
+      setTimeout(() => setCopiedPaola(false), 2000);
+    } else {
+      setCopiedDavid(true);
+      setTimeout(() => setCopiedDavid(false), 2000);
+    }
     toast({
       title: "IBAN copiato!",
       description: "L'IBAN è stato copiato negli appunti",
     });
-    setTimeout(() => setCopied(false), 2000);
   };
 
   return (
@@ -41,9 +54,9 @@ const GiftSection = () => {
         </div>
 
         {/* Gift Options */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Bonifico Option */}
-          <div className="bg-card p-8 md:p-10 rounded-2xl shadow-sm border border-peach/20 hover:shadow-lg transition-all duration-300">
+        <div className="max-w-4xl mx-auto">
+          {/* Intro */}
+          <div className="bg-card p-8 md:p-10 rounded-2xl shadow-sm border border-peach/20 mb-8">
             <div className="w-16 h-16 bg-peach-light rounded-full flex items-center justify-center mb-6 mx-auto">
               <Plane className="w-8 h-8 text-peach-dark" />
             </div>
@@ -56,40 +69,80 @@ const GiftSection = () => {
               Contribuite al nostro sogno: un viaggio di nozze in <span className="text-peach-dark font-medium">Giappone</span> 🇯🇵
             </p>
 
-            <div className="bg-cream/50 rounded-xl p-6 space-y-3">
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-muted-foreground">Intestatario</span>
-                <span className="text-foreground font-medium">{ibanDetails.intestatario}</span>
+            {/* Two IBAN cards */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* IBAN Paola */}
+              <div className="bg-cream/50 rounded-xl p-6 space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-muted-foreground">Intestatario</span>
+                  <span className="text-foreground font-medium text-right">{ibanPaola.intestatario}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-muted-foreground">Banca</span>
+                  <span className="text-foreground font-medium">{ibanPaola.banca}</span>
+                </div>
+                <div className="pt-3 border-t border-peach/20">
+                  <span className="text-sm text-muted-foreground block mb-2">IBAN</span>
+                  <div className="flex items-center gap-2">
+                    <code className="text-foreground font-mono text-xs bg-background px-3 py-2 rounded-lg flex-1 overflow-x-auto">
+                      {ibanPaola.iban}
+                    </code>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      onClick={() => copyIban(ibanPaola.iban, 'paola')}
+                      className="shrink-0 border-peach/30 hover:bg-peach-light hover:border-peach"
+                    >
+                      {copiedPaola ? (
+                        <Check className="w-4 h-4 text-green-600" />
+                      ) : (
+                        <Copy className="w-4 h-4 text-peach-dark" />
+                      )}
+                    </Button>
+                  </div>
+                </div>
               </div>
-              <div className="flex justify-between items-center">
-                <span className="text-sm text-muted-foreground">Banca</span>
-                <span className="text-foreground font-medium">{ibanDetails.banca}</span>
-              </div>
-              <div className="pt-3 border-t border-peach/20">
-                <span className="text-sm text-muted-foreground block mb-2">IBAN</span>
-                <div className="flex items-center gap-2">
-                  <code className="text-foreground font-mono text-sm bg-background px-3 py-2 rounded-lg flex-1 overflow-x-auto">
-                    {ibanDetails.iban}
-                  </code>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={copyIban}
-                    className="shrink-0 border-peach/30 hover:bg-peach-light hover:border-peach"
-                  >
-                    {copied ? (
-                      <Check className="w-4 h-4 text-green-600" />
-                    ) : (
-                      <Copy className="w-4 h-4 text-peach-dark" />
-                    )}
-                  </Button>
+
+              {/* IBAN David */}
+              <div className="bg-cream/50 rounded-xl p-6 space-y-3">
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-muted-foreground">Intestatario</span>
+                  <span className="text-foreground font-medium text-right">{ibanDavid.intestatario}</span>
+                </div>
+                <div className="flex justify-between items-center">
+                  <span className="text-sm text-muted-foreground">Banca</span>
+                  <span className="text-foreground font-medium">{ibanDavid.banca}</span>
+                </div>
+                <div className="pt-3 border-t border-peach/20">
+                  <span className="text-sm text-muted-foreground block mb-2">IBAN</span>
+                  <div className="flex items-center gap-2">
+                    <code className="text-foreground font-mono text-xs bg-background px-3 py-2 rounded-lg flex-1 overflow-x-auto">
+                      {ibanDavid.iban}
+                    </code>
+                    <Button
+                      variant="outline"
+                      size="icon"
+                      onClick={() => copyIban(ibanDavid.iban, 'david')}
+                      className="shrink-0 border-peach/30 hover:bg-peach-light hover:border-peach"
+                    >
+                      {copiedDavid ? (
+                        <Check className="w-4 h-4 text-green-600" />
+                      ) : (
+                        <Copy className="w-4 h-4 text-peach-dark" />
+                      )}
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
 
-            <p className="text-xs text-muted-foreground text-center mt-4 italic">
-              Nella causale indicate i vostri nomi 💕
-            </p>
+            {/* Causale suggestion */}
+            <div className="mt-6 bg-peach-light/50 rounded-xl p-4 text-center">
+              <p className="text-sm text-foreground">
+                <span className="font-medium">Causale consigliata:</span>{" "}
+                <span className="font-mono text-peach-dark">Regalo di Nozze - NOME E COGNOME MITTENTE/I</span>
+              </p>
+            </div>
           </div>
 
           {/* Lista Nozze Online Option */}
