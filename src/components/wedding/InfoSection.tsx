@@ -185,19 +185,19 @@ const InfoSection = () => {
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="tel:+39xxxxxxxxxx"
+              href="tel:+393454775858"
               className="inline-flex items-center gap-2 text-peach-dark hover:text-peach transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span>+39 XXX XXX XXXX</span>
+              <span>Paola: 345 477 5858</span>
             </a>
             <span className="hidden sm:block text-muted-foreground">|</span>
             <a
-              href="mailto:paola.david.wedding@email.it"
+              href="tel:+393461313370"
               className="inline-flex items-center gap-2 text-peach-dark hover:text-peach transition-colors"
             >
-              <Mail className="w-4 h-4" />
-              <span>paola.david.wedding@email.it</span>
+              <Phone className="w-4 h-4" />
+              <span>David: 346 131 3370</span>
             </a>
           </div>
         </div>
