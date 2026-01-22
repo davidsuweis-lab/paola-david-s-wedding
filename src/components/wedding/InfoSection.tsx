@@ -26,9 +26,9 @@ const InfoSection = () => {
   ];
 
   const alternativeParking = [
-    { street: "Via Leonardo Loredan", note: "metà gratuito" },
-    { street: "Via Giacomo Matteotti", note: "posti blu, attenzione alla ZTL" },
-    { street: "Via Giuseppe Jappelli", note: "gratuito" },
+    { street: "Via Leonardo Loredan", note: "metà gratuito", url: "https://maps.app.goo.gl/VwwPyi3DqVrsvwpD7" },
+    { street: "Via Giacomo Matteotti", note: "posti blu, attenzione alla ZTL", url: "https://maps.app.goo.gl/6gC86CZHXj2W9B746" },
+    { street: "Via Giuseppe Jappelli", note: "gratuito", url: "https://maps.app.goo.gl/HCRT7t835Agf8pmS9" },
   ];
 
   const infoCards = [
@@ -129,16 +129,22 @@ const InfoSection = () => {
             <h4 className="font-serif text-xl text-foreground mb-4">Parcheggi Alternativi (Strada)</h4>
             <div className="grid md:grid-cols-3 gap-4">
               {alternativeParking.map((parking, index) => (
-                <div
+                <a
                   key={index}
-                  className="bg-background p-4 rounded-xl border border-peach/20"
+                  href={parking.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group bg-background p-4 rounded-xl border border-peach/20 hover:border-peach hover:shadow-md transition-all duration-300"
                 >
-                  <div className="flex items-center gap-2 mb-2">
-                    <MapPin className="w-4 h-4 text-peach-dark" />
-                    <span className="font-medium text-foreground text-sm">{parking.street}</span>
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="flex items-center gap-2">
+                      <MapPin className="w-4 h-4 text-peach-dark" />
+                      <span className="font-medium text-foreground text-sm">{parking.street}</span>
+                    </div>
+                    <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-peach-dark transition-colors" />
                   </div>
                   <span className="text-xs text-muted-foreground italic">{parking.note}</span>
-                </div>
+                </a>
               ))}
             </div>
           </div>
