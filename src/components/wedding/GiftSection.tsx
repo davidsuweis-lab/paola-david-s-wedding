@@ -37,7 +37,7 @@ const GiftSection = () => {
   };
 
   return (
-    <section id="regali" className="py-24 bg-background">
+    <section id="lista-nozze" className="py-24 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center mb-16">

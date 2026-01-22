@@ -20,7 +20,7 @@ const Navigation = () => {
     { href: "#lista-nozze", label: "Lista Nozze" },
     { href: "#storia", label: "La Nostra Storia" },
     { href: "#galleria", label: "Galleria" },
-    { href: "#info", label: "Info" },
+    { href: "#info", label: "Info utili" },
   ];
 
   const scrollToSection = (href: string) => {

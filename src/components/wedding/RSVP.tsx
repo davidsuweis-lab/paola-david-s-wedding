@@ -31,9 +31,10 @@ const RSVP = () => {
           {/* CTA Button */}
           <Button
             onClick={openGoogleForm}
-            className="bg-peach hover:bg-peach-dark text-primary-foreground px-8 py-6 text-lg rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
+            className="bg-peach hover:bg-peach-dark text-primary-foreground px-8 py-6 text-lg rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex flex-col items-center leading-tight"
           >
-            Conferma la tua presenza – RSVP
+            <span>Conferma la tua presenza</span>
+            <span>RSVP</span>
           </Button>
         </div>
       </div>
