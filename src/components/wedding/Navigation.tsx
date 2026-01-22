@@ -16,10 +16,10 @@ const Navigation = () => {
 
   const navLinks = [
     { href: "#programma", label: "Programma" },
+    { href: "#rsvp", label: "Conferma Presenza" },
+    { href: "#lista-nozze", label: "Lista Nozze" },
     { href: "#storia", label: "La Nostra Storia" },
     { href: "#galleria", label: "Galleria" },
-    { href: "#rsvp", label: "RSVP" },
-    { href: "#lista-nozze", label: "Lista Nozze" },
     { href: "#info", label: "Info" },
   ];
 
