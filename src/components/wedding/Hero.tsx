@@ -35,7 +35,7 @@ const Hero = () => {
       backgroundImage: `url(${heroBg})`
     }} />
       {/* Overlay for better text readability */}
-      <div className="absolute inset-0 bg-background/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/80" />
 
       <div className="container mx-auto px-4 text-center z-10">
         {/* Names */}
