@@ -33,7 +33,7 @@ const RSVP = () => {
             onClick={openGoogleForm}
             className="bg-peach hover:bg-peach-dark text-primary-foreground px-8 py-6 text-lg rounded-full transition-all duration-300 shadow-lg hover:shadow-xl"
           >
-            Conferma la tua presenza
+            Conferma la tua presenza – RSVP
           </Button>
         </div>
       </div>
