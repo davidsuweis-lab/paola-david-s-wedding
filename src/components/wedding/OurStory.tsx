@@ -3,44 +3,29 @@ import { Heart } from "lucide-react";
 const OurStory = () => {
   const milestones = [
     {
-      year: "Giugno 2022",
-      title: "Il Primo Appuntamento",
-      description: "Un invito a messa al Santo andato male (abbiamo sbagliato orario!) si è trasformato in uno Spritz all'ombra dei portici della Pasticceria Lilium, affianco alla Basilica del Santo.",
+      year: "2022",
+      title: "Tutto inizia con uno Spritz 🍹",
+      description: "Una messa sbagliata, un tavolino alla Pasticceria Lilium, e da lì... non ci siamo più lasciati.",
     },
     {
-      year: "Settembre 2022",
-      title: "Il Primo Bacio",
-      description: "Dopo un romantico giro sui Colli Euganei, il nostro primo bacio ha sigillato qualcosa di speciale.",
-    },
-    {
-      year: "Ottobre 2022",
-      title: "L'Ufficialità",
-      description: "Ci siamo messi insieme, nello stesso tavolino del nostro primo incontro, sempre alla Pasticceria Lilium vista Santo.",
-    },
-    {
-      year: "Marzo 2023",
-      title: "La Prima Prova",
-      description: "5 mesi di distanza tra Madrid e Padova per la tesi di David. L'amore ha superato i chilometri.",
-    },
-    {
-      year: "Estate 2023",
-      title: "La Giordania",
-      description: "La prima volta di Paola in Giordania insieme a David, per conoscere le sue origini e la sua famiglia.",
+      year: "2023",
+      title: "Madrid, Giordania e tanta pazienza 🌍",
+      description: "5 mesi a distanza per la tesi, poi finalmente la Giordania insieme. L'amore batte i km.",
     },
     {
       year: "2024",
-      title: "Amicizie e Viaggi",
-      description: "Abbiamo consolidato molte amicizie insieme e viaggiato a Parigi ad aprile e a Barcellona a novembre.",
+      title: "Parigi, Barcellona e amici veri 🥂",
+      description: "Anno di viaggi, risate e amicizie consolidate. Ormai siamo un pacchetto unico.",
     },
     {
-      year: "20 Giugno 2025",
-      title: "La Proposta",
-      description: "Inaspettata, a Barcola a Trieste al tramonto, David chiede a Paola di sposarlo con un bellissimo anello.",
+      year: "2025",
+      title: "Barcola, tramonto, anello 💍",
+      description: "20 giugno, Trieste. David si inginocchia, Paola dice sì (dopo essersi ripresa dallo shock).",
     },
     {
-      year: "2 Maggio 2026",
-      title: "Il Matrimonio",
-      description: "Il giorno in cui prometteremo di amarci per sempre. Finalmente!",
+      year: "2026",
+      title: "Finalmente sposi! 💒",
+      description: "2 maggio. Il giorno in cui tutto diventa ufficiale. Vi aspettiamo!",
     },
   ];
 
