@@ -29,13 +29,15 @@ const RSVP = () => {
           </div>
 
           {/* CTA Button */}
-          <Button
-            onClick={openGoogleForm}
-            className="bg-peach hover:bg-peach-dark text-primary-foreground px-8 py-6 text-lg rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex flex-col items-center leading-tight"
-          >
-            <span>Conferma la tua presenza</span>
-            <span>RSVP</span>
-          </Button>
+          <div className="flex justify-center">
+            <Button
+              onClick={openGoogleForm}
+              className="bg-peach hover:bg-peach-dark text-primary-foreground px-10 py-8 text-lg rounded-full transition-all duration-300 shadow-lg hover:shadow-xl flex flex-col items-center justify-center leading-tight h-auto"
+            >
+              <span>Conferma la tua presenza</span>
+              <span>RSVP</span>
+            </Button>
+          </div>
         </div>
       </div>
     </section>
