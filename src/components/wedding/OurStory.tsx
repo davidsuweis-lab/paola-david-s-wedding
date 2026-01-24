@@ -10,7 +10,7 @@ const OurStory = () => {
     {
       year: "Settembre 2022",
       title: "Il Primo Bacio",
-      description: "Dopo un romantico giro sui Colli Euganei, il nostro primo bacio ha sigillato qualcosa di speciale.",
+      description: "Dopo un giro sui Colli Euganei, il nostro primo bacio.",
     },
     {
       year: "Ottobre 2022",
@@ -18,29 +18,24 @@ const OurStory = () => {
       description: "Ci siamo messi insieme, nello stesso tavolino del nostro primo incontro, sempre alla Pasticceria Lilium vista Santo.",
     },
     {
-      year: "Marzo 2023",
-      title: "La Prima Prova",
-      description: "5 mesi di distanza tra Madrid e Padova per la tesi di David. L'amore ha superato i chilometri.",
-    },
-    {
-      year: "Estate 2023",
-      title: "La Giordania",
-      description: "La prima volta di Paola in Giordania insieme a David, per conoscere le sue origini e la sua famiglia.",
+      year: "2023",
+      title: "Tra Madrid e la Giordania",
+      description: "Cinque mesi a distanza per la tesi di David a Madrid, poi il primo viaggio di Paola in Giordania per conoscere le origini e la famiglia di David.",
     },
     {
       year: "2024",
-      title: "Amicizie e Viaggi",
-      description: "Abbiamo consolidato molte amicizie insieme e viaggiato a Parigi ad aprile e a Barcellona a novembre.",
+      title: "Viaggi",
+      description: "Parigi ad aprile e Barcellona a novembre.",
     },
     {
       year: "20 Giugno 2025",
       title: "La Proposta",
-      description: "Inaspettata, a Barcola a Trieste al tramonto, David chiede a Paola di sposarlo con un bellissimo anello.",
+      description: "A Barcola, Trieste, al tramonto, David chiede a Paola di sposarlo.",
     },
     {
       year: "2 Maggio 2026",
       title: "Il Matrimonio",
-      description: "Il giorno in cui prometteremo di amarci per sempre. Finalmente!",
+      description: "Ci sposiamo!",
     },
   ];
 
