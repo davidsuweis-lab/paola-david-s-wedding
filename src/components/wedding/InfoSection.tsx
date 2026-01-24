@@ -1,4 +1,4 @@
-import { Car, Shirt, Phone, Mail, MapPin, ExternalLink, ParkingCircle } from "lucide-react";
+import { Car, Phone, MapPin, ExternalLink, ParkingCircle } from "lucide-react";
 
 const InfoSection = () => {
   const parkingSpots = [
@@ -26,30 +26,9 @@ const InfoSection = () => {
   ];
 
   const alternativeParking = [
-    { street: "Via Leonardo Loredan", note: "metà gratuito", url: "https://maps.app.goo.gl/VwwPyi3DqVrsvwpD7" },
-    { street: "Via Giacomo Matteotti", note: "posti blu, attenzione alla ZTL", url: "https://maps.app.goo.gl/6gC86CZHXj2W9B746" },
-    { street: "Via Giuseppe Jappelli", note: "gratuito", url: "https://maps.app.goo.gl/HCRT7t835Agf8pmS9" },
-  ];
-
-  const infoCards = [
-    {
-      icon: Car,
-      title: "Parcheggio in Villa",
-      content: [
-        "Ampio parcheggio gratuito disponibile",
-        "Accesso diretto dalla strada principale",
-        "Nessuna limitazione di posti",
-      ],
-    },
-    {
-      icon: Shirt,
-      title: "Dress Code",
-      content: [
-        "Elegante / Semi-formale",
-        "Consigliamo colori pastello",
-        "Il prato della Villa è in erba, attenzione ai tacchi!",
-      ],
-    },
+    { street: "Via Leonardo Loredan", note: "metà gratuito", url: "https://maps.app.goo.gl/VwwPyi3DqVrsvwpD7", distance: "600m" },
+    { street: "Via Giacomo Matteotti", note: "posti blu, attenzione alla ZTL", url: "https://maps.app.goo.gl/6gC86CZHXj2W9B746", distance: "450m" },
+    { street: "Via Giuseppe Jappelli", note: "gratuito", url: "https://maps.app.goo.gl/HCRT7t835Agf8pmS9", distance: "550m" },
   ];
 
   return (
@@ -136,75 +115,71 @@ const InfoSection = () => {
                   rel="noopener noreferrer"
                   className="group bg-background p-4 rounded-xl border border-peach/20 hover:border-peach hover:shadow-md transition-all duration-300"
                 >
-                  <div className="flex items-start justify-between mb-2">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-peach-dark" />
-                      <span className="font-medium text-foreground text-sm">{parking.street}</span>
-                    </div>
+                <div className="flex items-start justify-between mb-2">
+                    <MapPin className="w-5 h-5 text-peach-dark flex-shrink-0 mt-0.5" />
                     <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-peach-dark transition-colors" />
                   </div>
-                  <span className="text-xs text-muted-foreground italic">{parking.note}</span>
+                  <h5 className="font-medium text-foreground text-sm mb-1">{parking.street}</h5>
+                  <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    <span className="bg-peach-light px-2 py-0.5 rounded-full text-peach-dark">{parking.distance}</span>
+                    <span className="italic">{parking.note}</span>
+                  </div>
                 </a>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Other Info Cards Grid */}
+        {/* Info Cards Grid - Parcheggio Villa + Contatti */}
         <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto mb-16">
-          {infoCards.map((card, index) => (
-            <div
-              key={index}
-              className="bg-card p-8 rounded-2xl shadow-sm border border-peach/20 hover:shadow-lg transition-all duration-300"
-            >
-              {/* Icon */}
-              <div className="w-14 h-14 bg-peach-light rounded-full flex items-center justify-center mb-6">
-                <card.icon className="w-7 h-7 text-peach-dark" />
-              </div>
-
-              {/* Title */}
-              <h3 className="font-serif text-xl md:text-2xl text-foreground mb-4">
-                {card.title}
-              </h3>
-
-              {/* Content */}
-              <ul className="space-y-2">
-                {card.content.map((item, idx) => (
-                  <li key={idx} className="text-muted-foreground text-sm flex items-start gap-2">
-                    <span className="text-peach-dark mt-1">•</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
+          {/* Parcheggio in Villa */}
+          <div className="bg-card p-8 rounded-2xl shadow-sm border border-peach/20 hover:shadow-lg transition-all duration-300">
+            <div className="w-14 h-14 bg-peach-light rounded-full flex items-center justify-center mb-6">
+              <Car className="w-7 h-7 text-peach-dark" />
             </div>
-          ))}
-        </div>
+            <h3 className="font-serif text-xl md:text-2xl text-foreground mb-4">
+              Parcheggio in Villa
+            </h3>
+            <ul className="space-y-2">
+              <li className="text-muted-foreground text-sm flex items-start gap-2">
+                <span className="text-peach-dark mt-1">•</span>
+                Ampio parcheggio gratuito disponibile
+              </li>
+              <li className="text-muted-foreground text-sm flex items-start gap-2">
+                <span className="text-peach-dark mt-1">•</span>
+                Accesso diretto dalla strada principale
+              </li>
+              <li className="text-muted-foreground text-sm flex items-start gap-2">
+                <span className="text-peach-dark mt-1">•</span>
+                Nessuna limitazione di posti
+              </li>
+            </ul>
+          </div>
 
-        {/* Contact Section */}
-        <div className="max-w-2xl mx-auto text-center bg-card p-8 md:p-10 rounded-2xl shadow-sm border border-peach/20">
-          <h3 className="font-serif text-2xl md:text-3xl text-foreground mb-4">
-            Hai domande?
-          </h3>
-          <p className="text-muted-foreground mb-6">
-            Per qualsiasi informazione, non esitare a contattarci!
-          </p>
-          
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href="tel:+393454775858"
-              className="inline-flex items-center gap-2 text-peach-dark hover:text-peach transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              <span>Paola: 345 477 5858</span>
-            </a>
-            <span className="hidden sm:block text-muted-foreground">|</span>
-            <a
-              href="tel:+393461313370"
-              className="inline-flex items-center gap-2 text-peach-dark hover:text-peach transition-colors"
-            >
-              <Phone className="w-4 h-4" />
-              <span>David: 346 131 3370</span>
-            </a>
+          {/* Hai domande? */}
+          <div className="bg-card p-8 rounded-2xl shadow-sm border border-peach/20 hover:shadow-lg transition-all duration-300">
+            <h3 className="font-serif text-xl md:text-2xl text-foreground mb-4">
+              Hai domande?
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Per qualsiasi informazione, non esitare a contattarci!
+            </p>
+            <div className="flex flex-col gap-3">
+              <a
+                href="tel:+393454775858"
+                className="inline-flex items-center gap-2 text-peach-dark hover:text-peach transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                <span>Paola: 345 477 5858</span>
+              </a>
+              <a
+                href="tel:+393461313370"
+                className="inline-flex items-center gap-2 text-peach-dark hover:text-peach transition-colors"
+              >
+                <Phone className="w-4 h-4" />
+                <span>David: 346 131 3370</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
