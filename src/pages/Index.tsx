@@ -1,7 +1,7 @@
 import Navigation from "@/components/wedding/Navigation";
 import Hero from "@/components/wedding/Hero";
 import Program from "@/components/wedding/Program";
-import OurStory from "@/components/wedding/OurStory";
+// import OurStory from "@/components/wedding/OurStory"; // Temporaneamente nascosto
 import Gallery from "@/components/wedding/Gallery";
 import RSVP from "@/components/wedding/RSVP";
 import GiftSection from "@/components/wedding/GiftSection";
@@ -16,7 +16,7 @@ const Index = () => {
       <Program />
       <RSVP />
       <GiftSection />
-      <OurStory />
+      {/* <OurStory /> */} {/* Temporaneamente nascosto */}
       <Gallery />
       <InfoSection />
       <Footer />
