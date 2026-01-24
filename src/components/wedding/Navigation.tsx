@@ -18,7 +18,7 @@ const Navigation = () => {
     { href: "#programma", label: "Programma" },
     { href: "#rsvp", label: "Conferma Presenza" },
     { href: "#lista-nozze", label: "Lista Nozze" },
-    { href: "#storia", label: "La Nostra Storia" },
+    // { href: "#storia", label: "La Nostra Storia" }, // Temporaneamente nascosto
     { href: "#galleria", label: "Galleria" },
     { href: "#info", label: "Info utili" },
   ];
