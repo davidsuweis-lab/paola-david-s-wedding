@@ -1,8 +1,6 @@
 import { Heart } from "lucide-react";
-
 const Footer = () => {
-  return (
-    <footer className="py-12 bg-background border-t border-peach/20">
+  return <footer className="py-12 bg-background border-t border-peach/20">
       <div className="container mx-auto px-4 text-center">
         {/* Names with hearts */}
         <div className="flex items-center justify-center gap-3 mb-4">
@@ -19,10 +17,7 @@ const Footer = () => {
         </p>
 
         {/* Thank you message */}
-        <p className="text-muted-foreground text-sm max-w-md mx-auto mb-8">
-          Grazie per essere parte del nostro giorno speciale. 
-          Non vediamo l'ora di celebrare con voi!
-        </p>
+        <p className="text-muted-foreground text-sm max-w-md mx-auto mb-8">Grazie per essere parte del nostro giorno speciale. Non vediamo l'ora di festeggiare con voi!</p>
 
         {/* Decorative element */}
         <div className="flex items-center justify-center gap-4 mb-6">
@@ -36,8 +31,6 @@ const Footer = () => {
           Made with love 💕
         </p>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
