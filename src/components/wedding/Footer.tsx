@@ -27,9 +27,7 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <p className="text-xs text-muted-foreground">
-          Made with love 💕
-        </p>
+        <p className="text-xs text-muted-foreground">Made with love with AI 💕</p>
       </div>
     </footer>;
 };
