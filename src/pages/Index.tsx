@@ -4,7 +4,7 @@ import Program from "@/components/wedding/Program";
 // import OurStory from "@/components/wedding/OurStory"; // Temporaneamente nascosto
 import Gallery from "@/components/wedding/Gallery";
 import RSVP from "@/components/wedding/RSVP";
-import GiftSection from "@/components/wedding/GiftSection";
+import GiftSectionPreview from "@/components/wedding/GiftSectionPreview";
 import InfoSection from "@/components/wedding/InfoSection";
 import Footer from "@/components/wedding/Footer";
 
@@ -15,7 +15,7 @@ const Index = () => {
       <Hero />
       <Program />
       <RSVP />
-      <GiftSection />
+      <GiftSectionPreview />
       {/* <OurStory /> */} {/* Temporaneamente nascosto */}
       <Gallery />
       <InfoSection />
