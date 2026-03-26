@@ -29,7 +29,10 @@ const GiftSectionPreview = () => {
           <div>
             <Button
               className="bg-peach hover:bg-peach-dark text-white py-6 px-10 text-lg font-medium"
-              onClick={() => navigate("/lista-nozze")}
+              onClick={() => {
+                navigate("/lista-nozze");
+                window.scrollTo(0, 0);
+              }}
             >
               <Gift className="w-5 h-5 mr-2" />
               Vai alla Lista Nozze
