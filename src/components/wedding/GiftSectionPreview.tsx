@@ -20,19 +20,21 @@ const GiftSectionPreview = () => {
             ecco come potete contribuire alla nostra nuova vita insieme.
           </p>
 
-          <div className="mb-8 inline-flex items-center gap-2 text-peach-dark">
+          <div className="mb-6 flex items-center justify-center gap-2 text-peach-dark">
             <Heart className="w-4 h-4 fill-peach-dark" />
             <span className="font-serif italic">Grazie di cuore</span>
             <Heart className="w-4 h-4 fill-peach-dark" />
           </div>
 
-          <Button
-            className="bg-peach hover:bg-peach-dark text-white py-6 px-10 text-lg font-medium"
-            onClick={() => navigate("/lista-nozze")}
-          >
-            <Gift className="w-5 h-5 mr-2" />
-            Vai alla Lista Nozze
-          </Button>
+          <div>
+            <Button
+              className="bg-peach hover:bg-peach-dark text-white py-6 px-10 text-lg font-medium"
+              onClick={() => navigate("/lista-nozze")}
+            >
+              <Gift className="w-5 h-5 mr-2" />
+              Vai alla Lista Nozze
+            </Button>
+          </div>
         </div>
       </div>
     </section>
