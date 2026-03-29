@@ -162,13 +162,13 @@ const GiftSection = () => {
             <div className="space-y-4">
               <Button
                 className="w-full bg-peach hover:bg-peach-dark text-white py-6 text-lg font-medium"
-                onClick={() => window.open("#", "_blank")} // Placeholder - da sostituire con link Amazon
+                onClick={() => window.open("https://maison-hand.it/wp-content/uploads/2026/03/Lista-nozze-Paola-e-David-02.05.2026.pdf", "_blank")}
               >
                 <Gift className="w-5 h-5 mr-2" />
                 Vai alla Lista Nozze
               </Button>
-              <p className="text-xs text-muted-foreground text-center italic">
-                Link disponibile a breve
+              <p className="text-xs text-peach-dark text-center italic animate-pulse">
+                Link disponibile!
               </p>
             </div>
           </div>
