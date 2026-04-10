@@ -113,12 +113,23 @@ export default {
             transform: "translateY(-10px)",
           },
         },
+        "pulse-border": {
+          "0%, 100%": {
+            borderColor: "hsl(var(--peach))",
+            boxShadow: "0 0 0 0 hsl(var(--peach) / 0.4)",
+          },
+          "50%": {
+            borderColor: "hsl(var(--peach-dark))",
+            boxShadow: "0 0 15px 3px hsl(var(--peach) / 0.3)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in": "fade-in 0.8s ease-out forwards",
         "float": "float 3s ease-in-out infinite",
+        "pulse-border": "pulse-border 2s ease-in-out infinite",
       },
     },
   },
