@@ -146,7 +146,7 @@ const GiftSection = () => {
           </div>
 
           {/* Lista Nozze Online Option */}
-          <div className="bg-card p-8 md:p-10 rounded-2xl shadow-sm animate-pulse-border border-2 border-peach hover:shadow-lg transition-all duration-300 flex flex-col self-start">
+          <div className="bg-card p-8 md:p-10 rounded-2xl shadow-sm border-2 border-peach hover:shadow-lg transition-all duration-300 flex flex-col self-start">
             <div className="w-16 h-16 bg-peach-light rounded-full flex items-center justify-center mb-6 mx-auto">
               <Gift className="w-8 h-8 text-peach-dark" />
             </div>
