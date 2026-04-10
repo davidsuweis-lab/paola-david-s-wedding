@@ -146,7 +146,7 @@ const GiftSection = () => {
           </div>
 
           {/* Lista Nozze Online Option */}
-          <div className="bg-card p-8 md:p-10 rounded-2xl shadow-sm animate-pulse-border border-2 border-peach hover:shadow-lg transition-all duration-300 flex flex-col justify-center">
+          <div className="bg-card p-8 md:p-10 rounded-2xl shadow-sm animate-pulse-border border-2 border-peach hover:shadow-lg transition-all duration-300 flex flex-col self-start">
             <div className="w-16 h-16 bg-peach-light rounded-full flex items-center justify-center mb-6 mx-auto">
               <Gift className="w-8 h-8 text-peach-dark" />
             </div>
@@ -155,11 +155,15 @@ const GiftSection = () => {
               Lista Nozze Online
             </h3>
             
-            <p className="text-muted-foreground text-center mb-6 flex-1">
+            <p className="text-muted-foreground text-center mb-4">
               Abbiamo creato una lista di oggetti che ci accompagneranno nella nostra nuova casa.
             </p>
 
-            <div className="space-y-4">
+            <p className="text-muted-foreground text-center text-sm mb-6">
+              La lista è stata curata presso <span className="font-medium text-foreground">Maison Hand</span>, dove potrete scegliere tra una selezione di articoli per la casa.
+            </p>
+
+            <div className="space-y-3">
               <Button
                 className="w-full bg-peach hover:bg-peach-dark text-white py-6 text-lg font-medium"
                 onClick={() => window.open("https://maison-hand.it/wp-content/uploads/2026/03/Lista-nozze-Paola-e-David-02.05.2026.pdf", "_blank")}
