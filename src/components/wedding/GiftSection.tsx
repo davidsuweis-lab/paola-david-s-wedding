@@ -53,10 +53,10 @@ const GiftSection = () => {
           </p>
         </div>
 
-        {/* Gift Options */}
-        <div className="max-w-4xl mx-auto">
-          {/* Intro */}
-          <div className="bg-card p-8 md:p-10 rounded-2xl shadow-sm border border-peach/20 mb-8">
+        {/* Gift Options - Side by Side */}
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 items-stretch">
+          {/* Viaggio di Nozze - IBAN */}
+          <div className="bg-card p-8 md:p-10 rounded-2xl shadow-sm border border-peach/20 flex flex-col">
             <div className="w-16 h-16 bg-peach-light rounded-full flex items-center justify-center mb-6 mx-auto">
               <Plane className="w-8 h-8 text-peach-dark" />
             </div>
@@ -69,10 +69,10 @@ const GiftSection = () => {
               Contribuite al nostro sogno: un viaggio di nozze in <span className="text-peach-dark font-medium">Giappone</span> 🇯🇵
             </p>
 
-            {/* Two IBAN cards */}
-            <div className="grid md:grid-cols-2 gap-6">
+            {/* Two IBAN cards stacked */}
+            <div className="space-y-4 flex-1">
               {/* IBAN Paola */}
-              <div className="bg-cream/50 rounded-xl p-6 space-y-3">
+              <div className="bg-cream/50 rounded-xl p-5 space-y-3">
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-muted-foreground">Intestatario</span>
                   <span className="text-foreground font-medium text-right">{ibanPaola.intestatario}</span>
@@ -104,7 +104,7 @@ const GiftSection = () => {
               </div>
 
               {/* IBAN David */}
-              <div className="bg-cream/50 rounded-xl p-6 space-y-3">
+              <div className="bg-cream/50 rounded-xl p-5 space-y-3">
                 <div className="flex justify-between items-center">
                   <span className="text-sm text-muted-foreground">Intestatario</span>
                   <span className="text-foreground font-medium text-right">{ibanDavid.intestatario}</span>
@@ -146,7 +146,7 @@ const GiftSection = () => {
           </div>
 
           {/* Lista Nozze Online Option */}
-          <div className="bg-card p-8 md:p-10 rounded-2xl shadow-sm border border-peach/20 hover:shadow-lg transition-all duration-300 flex flex-col">
+          <div className="bg-card p-8 md:p-10 rounded-2xl shadow-sm animate-[pulse-border_2s_ease-in-out_infinite] border-2 border-peach hover:shadow-lg transition-all duration-300 flex flex-col justify-center">
             <div className="w-16 h-16 bg-peach-light rounded-full flex items-center justify-center mb-6 mx-auto">
               <Gift className="w-8 h-8 text-peach-dark" />
             </div>
@@ -167,8 +167,8 @@ const GiftSection = () => {
                 <Gift className="w-5 h-5 mr-2" />
                 Vai alla Lista Nozze
               </Button>
-              <p className="text-xs text-peach-dark text-center italic animate-pulse">
-                Link disponibile!
+              <p className="text-sm font-semibold text-peach-dark text-center italic animate-pulse tracking-wide">
+                ✨ LINK DISPONIBILE! ✨
               </p>
             </div>
           </div>
